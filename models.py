@@ -1,6 +1,5 @@
 from torch.nn import Parameter
 from util import *
-from gtn import *
 from transformer import *
 import torch
 import torch.nn as nn
@@ -86,7 +85,6 @@ class GATNResnet(nn.Module):
         A_Tensor1 = s_adj1.unsqueeze(-1)
 
 
-        self.gtn = GTLayer(A_Tensor.shape[-1], 1, first=True)
         self.transformerblock = AttentionBlock(num_classes)# TransformerBlock()
 
         self.linear_A = nn.Linear(80, 80)
